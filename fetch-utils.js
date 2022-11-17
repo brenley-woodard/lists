@@ -18,3 +18,8 @@ export async function fetchPastas() {
     const response = await client.from('pasta_dishes').select('*');
     return response.data;
 }
+
+export async function fetchTravels() {
+    const response = await client.from('travel_dest');
+    return response.data;
+}

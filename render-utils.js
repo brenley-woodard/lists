@@ -45,18 +45,18 @@ export function renderPastas(pasta) {
     return div;
 }
 
-// export function renderTravels(travel) {
-//     const div = document.createElement('div');
+export function renderTravels(travel) {
+    const div = document.createElement('div');
 
-//     const h3 = document.createElement('h3');
-//     h3.textContent = travel.name;
+    const h3 = document.createElement('h3');
+    h3.textContent = travel.name;
 
-//     const p = document.createElement('p');
-//     p.textContent = travel.vibes;
+    const p = document.createElement('p');
+    p.textContent = travel.vibes;
 
-//     const p2 = document.createElement('p');
-//     p2.textContent = travel.currency;
+    const p2 = document.createElement('p');
+    p2.textContent = travel.currency;
 
-//     div.append(h3, p, p2);
-//     return div;
-// }
+    div.append(h3, p, p2);
+    return div;
+}

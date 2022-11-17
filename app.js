@@ -1,11 +1,12 @@
 /* Imports */
-import { fetchDogs, fetchPastas, fetchWhales } from './fetch-utils.js';
-import { renderDogs, renderPastas, renderWhales } from './render-utils.js';
+import { fetchDogs, fetchPastas, fetchTravels, fetchWhales } from './fetch-utils.js';
+import { renderDogs, renderPastas, renderTravels, renderWhales } from './render-utils.js';
 
 /* Get DOM Elements */
 const dogDiv = document.getElementById('dogs');
 const whaleDiv = document.getElementById('whales');
 const pastaDiv = document.getElementById('pasta');
+const travelDiv = document.getElementById('travel');
 /* State */
 
 /* Events */
@@ -33,6 +34,15 @@ window.addEventListener('load', async () => {
     for (let pasta of pastas) {
         const pastaObject = renderPastas(pasta);
         pastaDiv.append(pastaObject);
+    }
+});
+
+window.addEventListener('load', async () => {
+    const travels = await fetchTravels();
+
+    for (let travel of travels) {
+        const travelObject = renderTravels(travel);
+        travelDiv.append(travelObject);
     }
 });
 /* Display Functions */
