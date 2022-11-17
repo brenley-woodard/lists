@@ -8,3 +8,13 @@ export async function fetchDogs() {
     const response = await client.from('dog_breeds').select('*');
     return response.data;
 }
+
+export async function fetchWhales() {
+    const response = await client.from('whale_species').select('*');
+    return response.data;
+}
+
+// export async function fetchPastas() {
+//     const response = await client.from('pasta_dishes').select('*');
+//     return response.data;
+// }

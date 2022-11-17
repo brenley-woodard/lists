@@ -1,9 +1,10 @@
 /* Imports */
-import { fetchDogs } from './fetch-utils.js';
-import { renderDogs } from './render-utils.js';
+import { fetchDogs, fetchWhales } from './fetch-utils.js';
+import { renderDogs, renderWhales } from './render-utils.js';
 
 /* Get DOM Elements */
 const dogDiv = document.getElementById('dogs');
+const whaleDiv = document.getElementById('whales');
 /* State */
 
 /* Events */
@@ -13,6 +14,15 @@ window.addEventListener('load', async () => {
     for (let dog of dogs) {
         const dogObject = renderDogs(dog);
         dogDiv.append(dogObject);
+    }
+});
+
+window.addEventListener('load', async () => {
+    const whales = await fetchWhales();
+
+    for (let whale of whales) {
+        const whaleObject = renderWhales(whale);
+        whaleDiv.append(whaleObject);
     }
 });
 
