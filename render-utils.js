@@ -29,17 +29,33 @@ export function renderWhales(whale) {
     return div;
 }
 
-// export function renderPastas(pasta) {
+export function renderPastas(pasta) {
+    const div = document.createElement('div');
+
+    const h3 = document.createElement('h3');
+    h3.textContent = pasta.name;
+
+    const p = document.createElement('p');
+    p.textContent = pasta.vegetarian;
+
+    const p2 = document.createElement('p');
+    p2.textContent = pasta.ingredients;
+
+    div.append(h3, p, p2);
+    return div;
+}
+
+// export function renderTravels(travel) {
 //     const div = document.createElement('div');
 
 //     const h3 = document.createElement('h3');
-//     h3.textContent = pasta.name;
+//     h3.textContent = travel.name;
 
 //     const p = document.createElement('p');
-//     p.textContent = pasta.vegetarian;
+//     p.textContent = travel.vibes;
 
 //     const p2 = document.createElement('p');
-//     p.textContent = pasta.ingredients;
+//     p2.textContent = travel.currency;
 
 //     div.append(h3, p, p2);
 //     return div;

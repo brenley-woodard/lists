@@ -1,10 +1,11 @@
 /* Imports */
-import { fetchDogs, fetchWhales } from './fetch-utils.js';
-import { renderDogs, renderWhales } from './render-utils.js';
+import { fetchDogs, fetchPastas, fetchWhales } from './fetch-utils.js';
+import { renderDogs, renderPastas, renderWhales } from './render-utils.js';
 
 /* Get DOM Elements */
 const dogDiv = document.getElementById('dogs');
 const whaleDiv = document.getElementById('whales');
+const pastaDiv = document.getElementById('pasta');
 /* State */
 
 /* Events */
@@ -26,6 +27,14 @@ window.addEventListener('load', async () => {
     }
 });
 
+window.addEventListener('load', async () => {
+    const pastas = await fetchPastas();
+
+    for (let pasta of pastas) {
+        const pastaObject = renderPastas(pasta);
+        pastaDiv.append(pastaObject);
+    }
+});
 /* Display Functions */
 
 // (don't forget to call any display functions you want to run on page load!)

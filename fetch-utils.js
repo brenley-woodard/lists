@@ -14,7 +14,7 @@ export async function fetchWhales() {
     return response.data;
 }
 
-// export async function fetchPastas() {
-//     const response = await client.from('pasta_dishes').select('*');
-//     return response.data;
-// }
+export async function fetchPastas() {
+    const response = await client.from('pasta_dishes').select('*');
+    return response.data;
+}
